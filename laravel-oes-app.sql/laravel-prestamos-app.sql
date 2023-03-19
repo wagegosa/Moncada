@@ -19,10 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `laravel-prestamos-app`
+-- Base de datos: `moncada`
 --
-CREATE DATABASE IF NOT EXISTS `laravel-prestamos-app` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `laravel-prestamos-app`;
+CREATE DATABASE IF NOT EXISTS `moncada` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `moncada`;
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ TRUNCATE TABLE `answers`;
 -- Volcado de datos para la tabla `answers`
 --
 
-INSERT INTO `answers` (`id`, `question_id`, `description`, `is_correct`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO answers (id, question_id, description, is_correct, user_id, created_at, updated_at) VALUES
 (1, 1, 'Deacuerdo', 1, 3, '2023-03-10 03:09:25', '2023-03-10 03:09:25'),
 (2, 1, 'Desacuerdo', 0, 3, '2023-03-10 03:09:25', '2023-03-10 03:09:25'),
 (3, 2, 'Deacuerdo', 1, 3, '2023-03-10 03:09:25', '2023-03-10 03:09:25'),
@@ -258,7 +258,7 @@ TRUNCATE TABLE `migrations`;
 -- Volcado de datos para la tabla `migrations`
 --
 
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+INSERT INTO migrations (id, migration, batch) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
@@ -312,7 +312,7 @@ TRUNCATE TABLE `model_has_roles`;
 -- Volcado de datos para la tabla `model_has_roles`
 --
 
-INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES
+INSERT INTO model_has_roles (role_id, model_type, model_id) VALUES
 (1, 'App\\Models\\User', 1),
 (2, 'App\\Models\\User', 2),
 (3, 'App\\Models\\User', 3),
@@ -363,7 +363,7 @@ TRUNCATE TABLE `permissions`;
 -- Volcado de datos para la tabla `permissions`
 --
 
-INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+INSERT INTO permissions (id, name, guard_name, created_at, updated_at) VALUES
 (1, 'usuarios-listar', 'web', '2023-02-28 17:28:16', '2023-02-28 17:28:16'),
 (2, 'usuarios-crear', 'web', '2023-02-28 17:28:16', '2023-02-28 17:28:16'),
 (3, 'usuarios-editar', 'web', '2023-02-28 17:28:16', '2023-02-28 17:28:16'),
@@ -469,7 +469,7 @@ TRUNCATE TABLE `questions`;
 -- Volcado de datos para la tabla `questions`
 --
 
-INSERT INTO `questions` (`id`, `title`, `value`, `user_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO questions (id, title, value, user_id, created_at, updated_at) VALUES
 (1, '1. Tengo fama de decir lo que pienso claramente y sin rodeos.', 0, 3, '2023-03-10 03:09:07', '2023-03-10 03:09:07'),
 (2, '2. Estoy seguro/a de lo que es bueno y lo que es malo, lo que está bien y lo que está mal.', 0, 3, '2023-03-10 03:09:07', '2023-03-10 03:09:07'),
 (3, '3. Muchas veces actúo sin mirar las consecuencias.', 0, 3, '2023-03-10 03:09:07', '2023-03-10 03:09:07'),
@@ -577,7 +577,7 @@ TRUNCATE TABLE `roles`;
 -- Volcado de datos para la tabla `roles`
 --
 
-INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
+INSERT INTO roles (id, name, guard_name, created_at, updated_at) VALUES
 (1, 'Super-Admin', 'web', '2023-02-28 17:28:17', '2023-02-28 17:28:17'),
 (2, 'Administrador', 'web', '2023-02-28 17:28:18', '2023-02-28 17:28:18'),
 (3, 'Supervisor', 'web', '2023-02-28 17:28:18', '2023-02-28 17:28:18'),
@@ -607,7 +607,7 @@ TRUNCATE TABLE `role_has_permissions`;
 -- Volcado de datos para la tabla `role_has_permissions`
 --
 
-INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES
+INSERT INTO role_has_permissions (permission_id, role_id) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
@@ -676,7 +676,7 @@ TRUNCATE TABLE `users`;
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+INSERT INTO users (id, name, email, email_verified_at, password, remember_token, created_at, updated_at) VALUES
 (1, 'John Doe', 'john.doe@superadmin.com', '2023-02-28 17:28:17', '$2y$10$mc8pbJESZJitf/D4mt66W.oyZoqRFfNtykwDsw2tAry8KeY35mq6q', 'LS6x0uCJfZPHhF1nnHaUkwDdGDZ8VIvbyGYEPRCEBKh3p0VAqHkHcAq7BekI', '2023-02-28 17:28:17', '2023-02-28 17:28:17'),
 (2, 'Jane Doe', 'jane.doe@admin.com', '2023-02-28 17:28:18', '$2y$10$wNbxDeMGzYNR4gKxw6c1FOBgeha7KGtN/ryectv8dgpdmUxMu9GVS', NULL, '2023-02-28 17:28:18', '2023-02-28 17:28:18'),
 (3, 'Richard Roe', 'richard.roe@supervisor.com', '2023-02-28 17:28:18', '$2y$10$UiXUNBgin9ZDVLCwv9nMBODq73Fh2dza3US4cChq8GJQW..9veH8y', 'dzQ7AjNv1V4rIsSWvJXG3JPr6f9meIRugfVH6BgQB3zrVg097scoSsuZX4p5', '2023-02-28 17:28:18', '2023-02-28 17:28:18'),
